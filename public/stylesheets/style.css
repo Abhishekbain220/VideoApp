@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+div .ri-search-line{
+  border-radius: 0 50px 50px 0;
+  border: none;
+}
+div::-webkit-scrollbar{
+  display: none;
+}

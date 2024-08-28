@@ -1,0 +1,24 @@
+<%-include("./partials/header")%>
+<div class="h-[100%] w-[100%] bg-black flex justify-center items-center">
+    <a class="absolute left-[5%] top-[5%] text-white text-xl font-bold " href="/login">Back</a>
+    <h1 class="absolute  top-[10%] left-[50%] translate-x-[-50%] text-4xl font-bold text-white">User Update Page</h1>
+    <form class=" justify-end w-[40%] h-max bg-black  flex flex-col items-center justify-center" action="/update_user/<%=user._id%>" method="post">
+
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-6 rounded-[50px]  " type="text" name="name" value="<%=user.name%>" placeholder="Enter Name" id=""> <br>
+
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-6 rounded-[50px]   " type="text" value="<%=user.username%>" name="username" placeholder="Enter Username"  id=""> <br>
+
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-6 rounded-[50px]   " type="email" value="<%=user.email%>" name="email" placeholder="Enter Email"  id=""> <br>
+
+        
+        
+        
+        
+        <button class="border-[1px] border-white text-white py-2 px-4 rounded-[50px] font-bold hover:bg-white hover:text-black " >Update User</button>
+    </form>
+    <div class="w-[40%] h-max absolute text-white items-center  top-[69%] flex ">
+        <p class="text-stone-400">Reset Your Account Password !</p>
+        <a class="ml-2" href="/reset_password/<%=user._id%>">Reset</a>
+    </div>
+</div>
+<%-include("./partials/footer")%>

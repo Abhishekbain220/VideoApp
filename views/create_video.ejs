@@ -1,0 +1,12 @@
+<%-include("./partials/header")%>
+<div class="h-[100%] w-[100%] bg-black flex justify-center">
+    <form class=" justify-end w-[40%] h-[30%] bg-black  flex flex-col items-center" action="/create_video" enctype="multipart/form-data" method="post">
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-6 rounded-[50px]  " type="text" name="name" placeholder="Enter Video Name" id=""> <br>
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-[35%] rounded-[50px]   " type="file" name="video"  id=""> <br>
+        
+        <h1 class="absolute text-white left-[32%] font-bold top-[16%]">Upload Video</h1>
+        
+        <button class="border-[1px] border-white text-white py-2 px-4 rounded-[50px] font-bold hover:bg-white hover:text-black " >Create Video</button>
+    </form>
+</div>
+<%-include("./partials/footer")%>

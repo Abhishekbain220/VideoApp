@@ -1,0 +1,16 @@
+<%-include("./partials/header")%>
+<div class="h-[100%] w-[100%] bg-[#0F0F0F] flex justify-center items-center">
+    <video class="absolute w-[25%] top-6 rounded-[20px]" autoplay loop muted src="/images/<%=read_video.video%>"></video>
+    <form class=" justify-end w-[40%] h-[30%] bg-[#0F0F0F]  flex flex-col items-center " action="/update_video/<%=read_video._id%>" enctype="multipart/form-data" method="post">
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-6 rounded-[50px]  " type="text" value="<%=read_video.name%>" name="name" placeholder="Enter Video Name" id=""> <br>
+
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-[35%] rounded-[50px]   " type="file" name="video"  id=""> <br>
+        
+        <input class=" bg-stone-700 text-white font-bold w-[100%] border-white border-[1px] p-2.5 pl-[35%] rounded-[50px]   " type="hidden" name="old_video" value="<%=read_video.video%>"  id=""> <br>
+        
+        
+        
+        <button class="border-[1px] border-white text-white py-2 px-4 rounded-[50px] font-bold hover:bg-white hover:text-black " >Update Video</button>
+    </form>
+</div>
+<%-include("./partials/footer")%>

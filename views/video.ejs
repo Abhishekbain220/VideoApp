@@ -1,0 +1,24 @@
+<%-include("./partials/header")%>
+<div class="bg-black h-[100%] w-[100%] flex ">
+    <a class="absolute top-3 text-white text-2xl left-7" href="/profile"><i class="ri-arrow-left-line"></i></a>
+    <div class="h-[100%] w-[70%] ">
+        <br> <br>
+        <video controls  class=" p-3 pl-[3%]  rounded-[20px] h-[75%] w-[100%] object-cover " src="/images/<%=video%>"></video>
+        <h1 class=" pl-[4%] text-2xl text-white font-bold"><%=name%></h1>
+    </div>
+    <div class="overflow-y-auto  h-[100%] w-[30%]">
+        <div class=" ">
+            <ol class=" h-[80%]  w-[100%]  mt-[13%] ">
+                <%read_data.forEach((elem)=>{%>
+                    <a class="h-[25%] w-[100%] " href="/video/<%=elem._id%>">
+                        <li class=" flex items-top   p-2">
+                            <video class="h-[100%] w-[50%] object-contain rounded-[10px] " src="/images/<%=elem.video%>"></video>
+                            <h2 class=" w-max h-max mt-3 ml-2 text-white text-1xl font-bold"><%=elem.name%></h2>
+                        </li>
+                    </a>
+                <%})%>
+            </ol>
+        </div>
+    </div>
+</div>
+<%-include("./partials/footer")%>

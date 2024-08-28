@@ -1,0 +1,41 @@
+<%-include("./partials/header")%>
+<div class="h-screen  bg-[#0F0F0F]">
+  <div class="w-[100%] h-[10%] bg-[#0F0F0F]  text-3xl font-bold text-red-600 flex items-center justify-evenly  ">
+    <div class="flex  items-center ml-[-12.5%] ">
+    <h1 class="w-[35%] absolute left-[5vh] text-3xl text-white font-bold  ">Vido</h1>
+    </div>
+    <form class=" mr-[10%] w-[40%]" action="">
+      <input class="text-[18px]  text-white w-[100%] py-1 rounded-[50px] pl-[20px] font-light bg-black border-[1px]  boder-white  " type="text" name="" placeholder="Search" id="">
+    </form>
+
+    <div class="absolute border-white border-[1px] rounded-[20px] py-2 px-7 top-4 right-9 text-white">
+        <h1 class="  text-xl" ></h1>
+    </div>
+  </div>
+  <nav class="bg-[#0F0F0F] mt-[5vh]  text-white text-center  h-[90%] w-[15%] py-2 ">
+    
+    <a class="w-[100%] hover:bg-stone-800 font-bold px-[35%] ml-3 rounded-[10px] py-2  mt-[15px]" href="/profile">Profile</a> <br> <br>
+    <a class=" hover:bg-stone-800 w-[100%] font-bold px-[15%]  ml-3 rounded-[10px]   py-2 mt-[10%]" href="/create_video">Create New Video</a> <br> <br>
+    <a class=" hover:bg-stone-800 w-[100%] font-bold px-[15%]  ml-3 rounded-[10px]   py-2 mt-[10%]" href="/delete">Delete Video</a> <br> <br>
+    <hr>
+    
+    
+  </nav>
+  <div class=" overflow-y-auto absolute left-[15%] top-[10%] w-[85%] h-[90%] bg-[#0F0F0F]  text-white">
+    
+    <div  class=" h-[100%] w-[100%]">
+      <ul  class=" gap-[2%]  bg-[#0F0F0F] p-6 flex flex-wrap">
+        <%read_data.forEach((elem)=>{%>
+          <a class="w-[32%] h-[43%] bg-[#0F0F0F] flex  flex-col items-center rounded-[10px]  text-center mb-[5%] " href="/update_video/<%=elem._id%>">
+            <li class="  w-[100%] h-[100%]   ">
+              <video class=" object-cover object-center rounded-[10px]  w-[100%] h-[80%]" src="/images/<%=elem.video%>" autoplay loop muted ></video>
+              <h1 class="text-2xl mt-2"><%=elem.name%></h1>
+            </li>
+          </a>
+        <%})%>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<%-include("./partials/footer")%>
